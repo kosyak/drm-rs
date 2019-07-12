@@ -89,6 +89,7 @@ impl DumbBuffer {
 
         let map = {
             use nix::sys::mman;
+            use std::convert::TryInto;
             let addr = ::std::ptr::null_mut();
             let prot = mman::PROT_READ | mman::PROT_WRITE;
             let flags = mman::MAP_SHARED;

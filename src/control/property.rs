@@ -274,15 +274,15 @@ impl PropertyInfoType {
     }
 
     fn is_irange(flag: u32) -> bool {
-        flag & ffi::DRM_MODE_PROP_SIGNED_RANGE != 0
+        flag & unsafe { ffi::DRM_MODE_PROP_SIGNED_RANGE } != 0
     }
 
     fn is_object(flag: u32) -> bool {
-        flag & ffi::DRM_MODE_PROP_OBJECT != 0
+        flag & unsafe { ffi::DRM_MODE_PROP_OBJECT } != 0
     }
 
     fn is_blob(flag: u32) -> bool {
-        flag & ffi::DRM_MODE_PROP_BLOB != 0
+        flag & unsafe { ffi::DRM_MODE_PROP_BLOB } != 0
     }
 }
 

@@ -107,6 +107,11 @@ impl Info {
     pub fn encoders<'a>(&'a self) -> &'a [control::encoder::Handle] {
         &self.encoders
     }
+
+    /// Returns a list containing each supported [`encoder::Handle`].
+    pub fn size(&self) -> (u32, u32) {
+        self.size
+    }
 }
 
 impl control::property::LoadProperties for Handle {

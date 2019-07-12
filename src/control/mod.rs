@@ -329,6 +329,11 @@ impl Mode {
     pub fn name(&self) -> &CStr {
         unsafe { CStr::from_ptr(&self.mode.name as *const _) }
     }
+
+    /// Returns the name of the mode.
+    pub fn is_preferred(&self) -> bool {
+        (self.mode.flags & ffi::DRM_MODE_TYPE_PREFERRED) > 0
+    }
 }
 
 // We need to implement PartialEq manually for Mode

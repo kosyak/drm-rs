@@ -249,11 +249,11 @@ impl Iterator for Events {
                             vblank_event.tv_sec as u64,
                             vblank_event.tv_usec * 1000,
                         ),
-                        crtc: Handle::from(if vblank_event.crtc_id != 0 {
+                        crtc: Handle::from(/*if vblank_event.crtc_id != 0 {
                             vblank_event.crtc_id
-                        } else {
+                        } else {*/
                             vblank_event.user_data as u32
-                        }),
+                        /*}*/),
                     }))
                 }
                 _ => Some(Event::Unknown(
